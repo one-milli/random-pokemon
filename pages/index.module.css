@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap");
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button {
+  --foreground-color: #343a40;
+  /* ボックス */
+  height: 59px;
+  width: 224px;
+  border: none;
+  padding: 5px 0;
+  margin: 0 0 5px 0;
+  /* テキスト */
+  font-size: 16px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: bold;
+  color: var(--foreground-color);
+  /* 猫の図形 */
+  background: radial-gradient(#e66465, #9198e5);
+  /* ボタンのインタラクション */
+  cursor: pointer;
+  filter: drop-shadow(0 5px 0 var(--foreground-color));
+  transition: 0.1s;
+}
+
+.button:hover {
+  /* ホバーしたときにちょっと押し込む */
+  transform: translateY(3px);
+  filter: drop-shadow(0 3px 0 var(--foreground-color));
+}
+
+.button:active {
+  /* クリックしたときに完全に押し込む */
+  transform: translateY(5px);
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.frame {
+  width: 400px;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 3px solid #343a40;
+  overflow: hidden;
+  /* 画像読込中に表示するもの */
+  background-image: radial-gradient(#54ffaab7 2px, #ffffff 2px);
+  background-size: 10px 10px;
+  animation: 3s scroll linear infinite;
+}
+
+.text {
+  font-size: 20px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: bold;
+  color: var(--foreground-color);
+}
+
+.img {
+  max-inline-size: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/* 画像読込中の背景を縦スクロールするためのアニメーション */
+@keyframes scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 90px;
+  }
+}
