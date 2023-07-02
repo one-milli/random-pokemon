@@ -50,3 +50,6 @@ A `type-check` script is also added to `package.json`, which runs TypeScript's `
 ```
 yarn dev
 ```
+
+## Reference
+https://typescriptbook.jp/tutorials/nextjs
